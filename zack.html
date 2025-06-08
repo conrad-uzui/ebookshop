@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nathaniel's Book Shop</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f8f9fa;
+        color: #333;
+      }
+
+      nav {
+        background-color: #02537a;
+        padding: 20px;
+        color: white;
+        margin-bottom: 30px;
+      }
+
+      nav h1 {
+        text-align: center;
+        margin-bottom: 10px;
+      }
+
+      .head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 15px;
+      }
+
+      .search {
+        width: 100%;
+        max-width: 400px;
+        height: 35px;
+        padding: 5px 10px;
+        border-radius: 20px;
+        border: none;
+      }
+
+      nav a {
+        color: white;
+        text-decoration: none;
+        margin-left: 10px;
+        font-weight: bold;
+      }
+
+      .total-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 30px;
+        padding: 20px;
+      }
+
+      .main {
+        background-color: white;
+        border-radius: 12px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition: transform 0.3s ease;
+      }
+
+      .main:hover {
+        transform: translateY(-5px);
+      }
+
+      .grid {
+        display: flex;
+        gap: 20px;
+        padding: 20px;
+        flex-wrap: wrap;
+      }
+
+      .image {
+        width: 120px;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+
+      .bookContent {
+        flex: 1;
+      }
+
+      .name {
+        font-size: 1.2em;
+        font-weight: bold;
+        color: #02537a;
+        margin-bottom: 10px;
+      }
+
+      .price {
+        font-size: 1em;
+        color: green;
+        margin: 10px 20px;
+      }
+
+      .buttons {
+        display: flex;
+        gap: 10px;
+        padding: 0 20px 20px;
+      }
+
+      button {
+        flex: 1;
+        padding: 10px;
+        border-radius: 25px;
+        border: none;
+        color: white;
+        cursor: pointer;
+        font-weight: bold;
+        transition: background-color 0.2s ease;
+      }
+
+      .buy {
+        background-color: #28a745;
+      }
+
+      .buy:hover {
+        background-color: #218838;
+      }
+
+      .view {
+        background-color: #007bff;
+      }
+
+      .view:hover {
+        background-color: #0069d9;
+      }
+
+      footer {
+        background-color: #02537a;
+        color: white;
+        text-align: center;
+        padding: 20px 0;
+        margin-top: 40px;
+      }
+
+      .content-wrapper {
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+        padding: 0 20px;
+        flex-wrap: wrap;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <h1>NATHANIEL'S BOOK SHOP</h1>
+      <div class="head">
+        <div class="left">Logo / Menu</div>
+        <input type="text" placeholder="Search books..." class="search" />
+        <div class="right">Cart / Profile</div>
+      </div>
+      <a href="#">Home</a>
+    </nav>
+
+    <div class="total-grid">
+      <!-- Book 1 -->
+      <div class="main">
+        <div class="grid">
+          <img src="voyage.jpg" alt="A Voyage to Arcturus" class="image" />
+          <div class="bookContent">
+            <h2 class="name">A Voyage to Arcturus</h2>
+            <p>
+              An amazing story exploring the beauty and untamed nature of a
+              faraway world.
+            </p>
+            <p><strong>Author:</strong> David Lindsay</p>
+          </div>
+        </div>
+        <p class="price">US$10.00</p>
+        <div class="buttons">
+          <button class="buy">Buy Now</button>
+          <button class="view" onclick="location.href='voyage.html'">
+            View More
+          </button>
+        </div>
+      </div>
+
+      <!-- Book 2 -->
+      <div class="main">
+        <div class="grid">
+          <img src="bundle.jpg" alt="A Bundle of Letters" class="image" />
+          <div class="bookContent">
+            <h2 class="name">A Bundle of Letters</h2>
+            <p>
+              A humorous story about morality and consciousness set in Europe.
+            </p>
+            <p><strong>Author:</strong> Henry James</p>
+          </div>
+        </div>
+        <p class="price">US$10.00</p>
+        <div class="buttons">
+          <button class="buy">Buy Now</button>
+          <button class="view" onclick="location.href='bundle.html'">
+            View More
+          </button>
+        </div>
+      </div>
+
+      <!-- Book 3 -->
+      <div class="main">
+        <div class="grid">
+          <img src="apart.jpg" alt="A World Apart" class="image" />
+          <div class="bookContent">
+            <h2 class="name">A World Apart</h2>
+            <p>
+              A man is reclaimed by youth and faces the psychological
+              consequences in this sci-fi journey.
+            </p>
+            <p><strong>Author:</strong> Sam Merwin</p>
+          </div>
+        </div>
+        <p class="price">US$10.00</p>
+        <div class="buttons">
+          <button class="buy">Buy Now</button>
+          <button class="view" onclick="location.href='apart.html'">
+            View More
+          </button>
+        </div>
+      </div>
+
+      <!-- Book 4 -->
+      <div class="main">
+        <div class="grid">
+          <img src="world.jpg" alt="A World Is Born" class="image" />
+          <div class="bookContent">
+            <h2 class="name">A World Is Born</h2>
+            <p>
+              Pioneers try to make Mercury habitable while facing romance and
+              rebellion.
+            </p>
+            <p><strong>Author:</strong> Leigh Brackett</p>
+          </div>
+        </div>
+        <p class="price">US$10.00</p>
+        <div class="buttons">
+          <button class="buy">Buy Now</button>
+          <button class="view" onclick="location.href='world.html'">
+            View More
+          </button>
+        </div>
+      </div>
+
+      <!-- Book 5 -->
+      <div class="main">
+        <div class="grid">
+          <img src="night.jpg" alt="Dark Nights Work" class="image" />
+          <div class="bookContent">
+            <h2 class="name">Dark Nights Work</h2>
+            <p>
+              A collection of psychological short stories exploring the human
+              struggle through darkness.
+            </p>
+            <p><strong>Author:</strong> Amigo Reader</p>
+          </div>
+        </div>
+        <p class="price">US$10.00</p>
+        <div class="buttons">
+          <button class="buy">Buy Now</button>
+          <button class="view" onclick="location.href='night.html'">
+            View More
+          </button>
+        </div>
+      </div>
+
+      <!-- Book 6 -->
+      <div class="main">
+        <div class="grid">
+          <img src="only.jpg" alt="Adolescents Only" class="image" />
+          <div class="bookContent">
+            <h2 class="name">Adolescents Only</h2>
+            <p>
+              A wild sci-fi tale involving mysterious twins, a meteorite, and
+              the unraveling of reality.
+            </p>
+            <p><strong>Author:</strong> Nathaniels</p>
+          </div>
+        </div>
+        <p class="price">US$10.00</p>
+        <div class="buttons">
+          <button class="buy">Buy Now</button>
+          <button class="view" onclick="location.href='only.html'">
+            View More
+          </button>
+        </div>
+      </div>
+
+      <!-- Book 7 -->
+      <div class="main">
+        <div class="grid">
+          <img src="boat.jpg" alt="Adrift In A Boat" class="image" />
+          <div class="bookContent">
+            <h2 class="name">Adrift In A Boat</h2>
+            <p>
+              Two English boys survive storms, privateers, and desert islands in
+              this sea adventure.
+            </p>
+            <p><strong>Author:</strong> William Henry</p>
+          </div>
+        </div>
+        <p class="price">US$10.00</p>
+        <div class="buttons">
+          <button class="buy">Buy Now</button>
+          <button class="view" onclick="location.href='boat.html'">
+            View More
+          </button>
+        </div>
+      </div>
+
+      <!-- Book 8 -->
+      <div class="main">
+        <div class="grid">
+          <img src="alfred.jpg" alt="Alfred de Mussetk" class="image" />
+          <div class="bookContent">
+            <h2 class="name">Alfred de Mussetk</h2>
+            <p>
+              Digitized from UC Libraries, this classic reflects 19th-century
+              literature at its finest.
+            </p>
+            <p><strong>Author:</strong> Arvde Barine</p>
+          </div>
+        </div>
+        <p class="price">US$10.00</p>
+        <div class="buttons">
+          <button class="buy">Buy Now</button>
+          <button class="view" onclick="location.href='alfred.html'">
+            View More
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Added Aside Section -->
+
+    <footer>
+      <p>Copyright © 2023 Nathaniel</p>
+    </footer>
+  </body>
+</html>
